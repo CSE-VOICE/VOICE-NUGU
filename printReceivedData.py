@@ -21,7 +21,7 @@ def start_tcp_server():
         server_socket.listen()
 
         print(f"TCP server listening on {frontend_server_address}")
-
+        
         while True:
             client_socket, _ = server_socket.accept()
             client_handler = threading.Thread(target=handle_client, args=(client_socket,))
