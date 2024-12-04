@@ -73,6 +73,19 @@ def sleep_mode():
         return response_data
     except Exception as e:
         return jsonify({"status": "error", "message": str(e)}), 500
+    
+@app.route('/action.tired_mode', methods=['POST'])
+def sleep_mode():
+    try:
+        response_data = {
+            "version": "2.0",
+            "resultCode": "OK",
+            "output": {}
+        }
+        response_data = json.dumps(response_data, indent=2)
+        return response_data
+    except Exception as e:
+        return jsonify({"status": "error", "message": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
